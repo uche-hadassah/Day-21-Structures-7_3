@@ -71,9 +71,18 @@ int main()
 		cout << "\nPrice:$" << bookDetails[j].price;
 		cout << endl;
 	}
+	cout << "\nThe index of the most expensive book is:" << mostExpIdx(bookDetails, BOOKMAX);
 }
 
-int mostExpIdx(Book[], int)
+int mostExpIdx(Book book[], int size)
 {
-	return 0;
+	int index = size;
+	for (int i = 0; i < size; i++)
+	{
+		if (i > index)
+		{
+			index = i;
+		}
+	}
+	return index;
 }
