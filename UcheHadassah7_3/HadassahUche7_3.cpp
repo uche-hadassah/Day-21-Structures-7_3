@@ -10,7 +10,19 @@ size, and displays all the details of all the books in the array. Test your func
 #include<iostream>
 #include<cstring>
 using namespace std;
-@@ - 23, 60 + 20, 70 @@ int main()
+const int BOOKMAX = 5;
+struct Book
+{
+	char author[100];
+	char title[100];
+	char publisher[100];
+	int yearOfPublication;
+	int isbn = 0;
+	double price;
+};
+int main()
+{
+	Book bookDetails[BOOKMAX];
 int option;
 do
 {
