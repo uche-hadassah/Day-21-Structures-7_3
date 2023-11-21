@@ -23,7 +23,7 @@ struct Book
 
 //Function prototypes
 int mostExpIdx(Book[], int);
-
+void displayBooks(Book[], int);
 int main()
 {
 	Book bookDetails[BOOKMAX];
@@ -60,29 +60,35 @@ int main()
 		} while (bookDetails[i].price <= 0.0);
 		cin.ignore();
 	}
-	for (int j = 0; j < BOOKMAX; j++)//Prints out the details of every book
-	{
-		cout << "\nBOOK " << j + 1;
-		cout << "\nTitle:" << bookDetails[j].title;
-		cout << "\nAuthor:" << bookDetails[j].author;
-		cout << "\nPublisher:" << bookDetails[j].publisher;
-		cout << "\nYear of publication:" << bookDetails[j].yearOfPublication;
-		cout << "\nISBN:BOOK00" << bookDetails[j].isbn;
-		cout << "\nPrice:$" << bookDetails[j].price;
-		cout << endl;
-	}
 	cout << "\nThe index of the most expensive book is:" << mostExpIdx(bookDetails, BOOKMAX);
+	//I need to display the details of the most expensive book
+	displayBooks(bookDetails, BOOKMAX);
 }
 
 int mostExpIdx(Book book[], int size)
 {
-	int index = size;
+	int index = 0;
 	for (int i = 0; i < size; i++)
 	{
-		if (i > index)
+		if (book[i].price > book[index].price)
 		{
 			index = i;
 		}
 	}
 	return index;
+}
+
+void displayBooks(Book book[], int size)
+{
+	for (int j = 0; j < size; j++)//Prints out the details of every book
+	{
+		cout << "\nBOOK " << j + 1;
+		cout << "\nTitle:" << book[j].title;
+		cout << "\nAuthor:" << book[j].author;
+		cout << "\nPublisher:" << book[j].publisher;
+		cout << "\nYear of publication:" << book[j].yearOfPublication;
+		cout << "\nISBN:BOOK00" << book[j].isbn;
+		cout << "\nPrice:$" << book[j].price;
+		cout << endl;
+	}
 }
