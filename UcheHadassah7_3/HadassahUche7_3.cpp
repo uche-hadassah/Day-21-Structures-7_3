@@ -20,13 +20,17 @@ struct Book
 	int isbn = 0;
 	double price;
 };
+
+//Function prototypes
+int mostExpIdx(Book[], int);
+
 int main()
 {
 	Book bookDetails[BOOKMAX];
 
 	for(int i = 0;i<BOOKMAX;i++)// Receives the details of the book from the user
 	{
-		cout << "Enter the details of book"<<i+1;
+		cout << "Enter the details of book "<<i+1;
 		cout << "\nTitle:";
 		cin.getline(bookDetails[i].title, 100);
 		cout << "Author:";
@@ -65,5 +69,11 @@ int main()
 		cout << "\nYear of publication:" << bookDetails[j].yearOfPublication;
 		cout << "\nISBN:BOOK00" << bookDetails[j].isbn;
 		cout << "\nPrice:$" << bookDetails[j].price;
+		cout << endl;
 	}
+}
+
+int mostExpIdx(Book[], int)
+{
+	return 0;
 }
