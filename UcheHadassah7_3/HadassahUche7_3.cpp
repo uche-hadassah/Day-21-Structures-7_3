@@ -1,12 +1,7 @@
-/*a) Using the data type declared for question (2) above, write a program that 
-interactively accepts data into an array of 5 Book structures. Once the data have been 
-entered, the program should list the details of all books.
-b) Write a function that takes as parameters an array of book structures and the array 
-size, and returns the index position of the most expensive book (no printing is done in 
-this function). Test this function in the main program by printing the book details of 
-the most expensive book.
-c) Write a function that takes as parameters an array of book structures and the array 
-size, and displays all the details of all the books in the array. Test your function*/
+/*Name:Uche Hadassah
+This program receives and stores the details of 5 books, 
+finds the index of the most expensive book,displays it 
+and displays the list of all the books*/
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -61,9 +56,8 @@ int main()
 		cin.ignore();
 	}
 	cout << "\nThe index of the most expensive book is:" << mostExpIdx(bookDetails, BOOKMAX);
-	//I need to display the details of the most expensive book
 	int expIdx = mostExpIdx(bookDetails, BOOKMAX);
-	displayBooks(bookDetails + expIdx, 1);
+	displayBooks(bookDetails + expIdx, 1);//Display the most expensive book
 	displayBooks(bookDetails, BOOKMAX);
 }
 
@@ -77,7 +71,7 @@ int mostExpIdx(Book book[], int size)
 			index = i;
 		}
 	}
-	return index;
+	return index;//Returns the index
 }
 
 void displayBooks(Book book[], int size)
