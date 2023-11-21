@@ -62,6 +62,8 @@ int main()
 	}
 	cout << "\nThe index of the most expensive book is:" << mostExpIdx(bookDetails, BOOKMAX);
 	//I need to display the details of the most expensive book
+	int expIdx = mostExpIdx(bookDetails, BOOKMAX);
+	displayBooks(bookDetails + expIdx, 1);
 	displayBooks(bookDetails, BOOKMAX);
 }
 
